@@ -12,7 +12,97 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./vite-promo.css');
 @import url('./badges.css');
 @import url('./back-link.css');
-@import url('./footer.css');
+
+/* 1. Робимо так, щоб календар і кнопка стояли в один рядок */
+.picker-wrapper {
+  display: flex;
+  gap: 8px;
+  /* Відстань між календарем і кнопкою */
+  margin-bottom: 32px;
+  /* Відступ від кнопки до цифр таймера */
+}
+
+/* 2. Робимо саме віконце календаря гарним */
+#datetime-picker {
+  width: 272px;
+  font-size: 32px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Коли ми натискаємо на календар, він підсвічується синім */
+#datetime-picker:hover,
+#datetime-picker:focus {
+  border-color: #4e75ff;
+}
+
+/* 3. Оновлюємо кнопку, щоб вона була однакової висоти з інпутом */
+button[data-start] {
+  height: 40px;
+  padding: 8px 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #4e75ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 1. Будуємо ряд для наших будиночків */
+.timer {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* 2. Кожен будиночок (Days, Hours і т.д.) */
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 3. Самі великі цифри */
+.value {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+/* 4. Маленькі підписи під цифрами */
+.label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2e2f42;
+}
+
+/* 5. Стиль для кнопочки Start (щоб була красива) */
+button[data-start] {
+  padding: 8px 16px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button[data-start]:disabled {
+  background-color: #cfcfcf;
+  cursor: ;
+}
