@@ -104,5 +104,4 @@ button[data-start] {
 
 button[data-start]:disabled {
   background-color: #cfcfcf;
-  cursor: ;
 }
